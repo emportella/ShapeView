@@ -6,9 +6,9 @@
     <artifactId>EmpShapeView</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-
     <name>EmpShapeView</name>
-    <url>http://maven.apache.org</url>
+    <url>http://github.com/emportella/ShapeView</url>
+        
     <build>
         <plugins>
             <plugin>
@@ -16,14 +16,40 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.7</source>
                     <target>1.7</target>
+                    <source>1.7</source>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.emportella.empshapeview.Control</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeGroupIds>org.geotools</includeGroupIds>
+                            <outputDirectory>${project.build.directory}/lib/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <geotools.version>9.0</geotools.version>
     </properties>
     <repositories>
         <repository>
@@ -39,16 +65,15 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-shapefile</artifactId>
-            <version>9.0</version>
+            <version>${geotools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-swing</artifactId>
-            <version>9.0</version>
+            <version>${geotools.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 import org.geotools.data.FileDataStore;
 import org.geotools.data.FileDataStoreFinder;
 import org.geotools.data.simple.SimpleFeatureSource;
@@ -21,15 +20,12 @@ import org.geotools.swing.JMapFrame;
 import org.geotools.swing.data.JFileDataStoreChooser;
 
 /**
- * Prompts the user for a shapefile and displays the contents on the screen in a map frame.
- * <p>
- * This is the GeoTools Quickstart application used in documentationa and tutorials. *
+ * 
  */
 public class Control {
 
     /**
-     * GeoTools Quickstart demo application. Prompts the user for a shapefile and displays its
-     * contents on the screen in a map frame
+     * 
      */
     
     public static void main(String[] args) throws Exception {
@@ -75,14 +71,14 @@ public class Control {
         
         // Now display the map
         JMapFrame jmf = new JMapFrame();
+        jmf.setSize(800, 600);
+//        jmf.enableLayerTable(true);
+        jmf.enableStatusBar(true);
         jmf.enableToolBar(true);
         jmf.getToolBar().add(jb);
-        jmf.enableLayerTable(true);
-        jmf.initComponents();
-        jmf.enableStatusBar(true);
         jmf.setMapContent(map);
         jmf.setVisible(true);
-        
+        jmf.initComponents();
     }
 
 }

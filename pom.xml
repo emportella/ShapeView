@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.emportella</groupId>
-    <artifactId>EmpShapeView</artifactId>
+    <artifactId>ShapeView</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>EmpShapeView</name>
+    <name>ShapeView</name>
     <url>http://github.com/emportella/ShapeView</url>
         
     <build>
@@ -22,7 +22,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib\</classpathPrefix>
-                            <mainClass>com.emportella.empshapeview.Control</mainClass>
+                            <mainClass>com.emportella.shapeview.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -44,6 +44,15 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

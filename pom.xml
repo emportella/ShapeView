@@ -21,8 +21,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <classpathLayoutType>repository</classpathLayoutType>
+                            <classpathPrefix>lib\</classpathPrefix>
                             <mainClass>com.emportella.empshapeview.Control</mainClass>
                         </manifest>
                     </archive>
@@ -40,8 +39,8 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.geotools</includeGroupIds>
-                            <outputDirectory>${project.build.directory}/lib/</outputDirectory>
+                            <includeGroupIds></includeGroupIds>
+                            <outputDirectory>${project.build.directory}\lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -50,7 +49,7 @@
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <geotools.version>9.0</geotools.version>
+        <geotools.version>9.1</geotools.version>
     </properties>
     <repositories>
         <repository>
